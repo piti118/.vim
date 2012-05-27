@@ -9,6 +9,8 @@ set writebackup
 set history=50
 set hlsearch
 set incsearch
+set ignorecase
+
 set keymodel=startsel,stopsel
 set ruler
 set mouse=a
@@ -45,7 +47,7 @@ set smartindent
 "highlight Pmenu ctermbg=238 gui=bold "get rid of pink omni"
 
 filetype plugin on
-filetype indent on
+"filetype indent on
 
 "key map
 imap <F2> <C-O>:update<CR>
@@ -54,8 +56,12 @@ map <F2> :update<CR>
 imap <F3> <C-O>:undo<CR>
 map <F3> :undo<CR>
 
-imap <F4> <C-O>:redo<CR>
-map <F4> :redo<CR>
+set <S-F3>=[1;2R
+imap <S-F3> <C-O>:redo<CR>
+map <S-F3> :redo<CR>
+
+nnoremap <F4> :set invpaste paste?<CR>
+set pastetoggle=<F4>
 
 imap <F5> <C-O>:tabprevious<CR>
 map <F5> :tabprevious<CR>
@@ -93,4 +99,7 @@ set laststatus=2
 set wildmenu
 set wildmode=list:longest,full
 
+"gui stuff
+set gfn=Monaco:h12
+set guioptions-=T
 start
