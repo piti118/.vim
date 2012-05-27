@@ -72,11 +72,18 @@ map <F6> :tabnext<CR>
 imap <F7> <C-O>:set number!<CR>
 map <F7> :set number!<CR>
 
+set <S-F7>=^[[18;2~
+imap <S-F7> <C-O>:set list!<CR>
+map <S-F7> :set list!<CR>
+
 imap <c-k> <esc>ddi
 
 imap jj <ESC>
 
 imap <c-l> <c-o>: "goto line
+
+imap <S-CR> <C-O>:
+map <S-CR> :
 
 map ; :
 
@@ -93,13 +100,17 @@ vmap <S-Tab> <gv
 vmap / <leader>c<space> gv
 
 "status line
-set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
+set statusline=%<%F%h%m%r%h%w%y\ %{&ff}%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
 set laststatus=2
 
 set wildmenu
 set wildmode=list:longest,full
 
+set listchars=tab:>-,eol:¬,trail:·
+set list
+
 "gui stuff
 set gfn=Monaco:h12
 set guioptions-=T
 start
+
