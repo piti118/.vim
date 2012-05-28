@@ -43,7 +43,7 @@ set spelllang=en_us
 set autoindent
 set smartindent
 
-"hi MatchParen cterm=bold ctermbg=none
+hi MatchParen cterm=bold ctermbg=none
 "highlight Pmenu ctermbg=238 gui=bold "get rid of pink omni"
 
 filetype plugin on
@@ -82,10 +82,14 @@ imap jj <ESC>
 
 imap <c-l> <c-o>: "goto line
 
+imap <c-z> <c-o>:sus<CR>
+
 imap <S-CR> <C-O>:
 map <S-CR> :
 
 map ; :
+map J jjj
+map K kkk
 
 "really want to quit
 cabbrev qq q!
@@ -112,5 +116,11 @@ set list
 "gui stuff
 set gfn=Monaco:h12
 set guioptions-=T
+
+if has("gui_running")
+    set transparency=5
+endif
+
+
 start
 
