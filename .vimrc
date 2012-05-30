@@ -14,7 +14,6 @@ set ignorecase
 set keymodel=startsel,stopsel
 set ruler
 set mouse=a
-set selection=exclusive
 set selectmode=mouse,key
 set linebreak
 
@@ -82,6 +81,8 @@ imap jj <ESC>
 
 imap <c-l> <c-o>: "goto line
 
+imap <c-f> <esc>/
+
 imap <c-z> <c-o>:sus<CR>
 
 imap <S-CR> <C-O>:
@@ -95,6 +96,7 @@ map K kkk
 cabbrev qq q!
 cabbrev qqq qa!
 cabbrev e tabe
+cabbrev rd redraw!
 
 "block tab
 vmap <Tab> >gv
@@ -120,7 +122,4 @@ set guioptions-=T
 if has("gui_running")
     set transparency=5
 endif
-
-
-start
 
