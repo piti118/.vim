@@ -42,7 +42,7 @@ set spelllang=en_us
 set autoindent
 set smartindent
 
-hi MatchParen cterm=bold ctermbg=none
+hi MatchParen cterm=bold ctermbg=NONE guibg=NONE
 "highlight Pmenu ctermbg=238 gui=bold "get rid of pink omni"
 
 filetype plugin on
